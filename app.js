@@ -3,20 +3,14 @@
 var naturalNums = [1,2,3,4,5,6,7,8,9,10];
 
 function getSumOfSquares() {
-  var squareNums = naturalNums.map(function(num) {
-    return Math.pow(num,2);
-  });
-  var sumNums = squareNums.reduce(function(pv, cv) {
-    return pv + cv;
-  });
+  var squareNums = naturalNums.map((num) => Math.pow(num,2));
+  var sumNums = squareNums.reduce((pv, cv) => pv + cv);
   getSquareOfSums(sumNums);
 }
 
 function getSquareOfSums(sumOfSquares) {
   var sumOfNats;
-  sumOfNats = naturalNums.reduce(function(pv, cv) {
-    return pv + cv;
-  });
+  sumOfNats = naturalNums.reduce((pv, cv) => pv + cv);
   sumOfNats = sumOfNats * sumOfNats;
   var mainDifference = sumOfNats - sumOfSquares;
   console.log ("Difference between sum of squares and square of sums: ",mainDifference);
