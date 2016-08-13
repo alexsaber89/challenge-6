@@ -7,17 +7,26 @@ function getSum(total, num) {
 }
 
 function getSumOfSquares() {
+  console.log("Natural numbers array: ",naturalNums);
   var squareNums = [];
   var sumNums;
   for (var i = 0; i < naturalNums.length; i++) {
-    squareNums.push(naturalNums[i] * naturalNums[i]);
+    squareNums.push(Math.pow(naturalNums[i],2));
   }
+  console.log("Squares of main array: ",squareNums);
   sumNums = squareNums.reduce(getSum);
-  console.log(squareNums);
-  console.log(sumNums);
+  console.log("Sum of squares of main array: ",sumNums);
   getSquareOfSums(sumNums);
 }
 
-// function getSquareOfSums(sumOfSquares) {
-
-// }
+function getSquareOfSums(sumOfSquares) {
+  console.log("Natural numbers array: ",naturalNums);
+  var sumOfNats;
+  sumOfNats = naturalNums.reduce(getSum);
+  console.log("Sum of main array: ",sumOfNats);
+  sumOfNats = sumOfNats * sumOfNats;
+  console.log("Square of sums of main array: ",sumOfNats);
+  var mainDifference = sumOfNats - sumOfSquares;
+  console.log ("Difference between sum of squares and square of sums: ",mainDifference);
+}
+getSumOfSquares();
